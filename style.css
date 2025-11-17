@@ -18,6 +18,8 @@ body,
 
 header {
     background-image: url(img/coffee_image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 header .logo {
@@ -92,3 +94,34 @@ header .login {
     box-shadow: 0 0 10px 2px grey;
 }
 
+.hero {
+    width: 585px;
+    padding-top: 116px;
+    padding-bottom: 95px;
+}
+
+.hero .label,
+.hero .description {
+    color: #fff;
+    font-size: 22px;
+}
+
+.hero .title {
+    color: #fff;
+    font-family: "Clicker Script", cursive;
+    font-size: 220px;
+}
+
+.hero .description {
+    line-height: 34px;
+}
+
+.order-btn {
+    background-color: #F9C06A;
+    padding: 14px 26px;
+    color: #1E1E1E;
+    border-radius: 24px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+}
