@@ -77,7 +77,6 @@ header nav {
     font-weight: 600;
 }
 
-
 header ul {
     border: 1px solid red;
     display: inline-block;
@@ -117,7 +116,6 @@ header .login {
     margin-right: 35px;
     text-decoration: underline;    
 }
-
 
 .signup-btn {
     color: var(--btn-color);
@@ -305,7 +303,6 @@ header .login {
     font-size: 30px;
 }
 
-
 .offer {
     
     background-image: url(img/cup.png), url(img/coffee_bean.png), 
@@ -346,17 +343,29 @@ header .login {
     border: 2px solid red;
     padding-inline: 41px;
     padding-block: 57px;
+    position: relative;
 }
 
 .slider {
-    border: 2px solid green;
+    overflow: hidden;
+    width: 980px;
+    margin: 0 auto;
+}
+
+.slides {
+    border: 2px solid red;
+    width: 2956px;
+    transition: 0.5s;
 }
 
 .slide {
-    background-color: #F9C06A2a;
+    display: inline-block;
+    background-color: #fff9f1;
     padding: 140px 100px 17.5px;
-    border: 2px solid #603809;
+    border: 2px solid #F9C06A70;
     position: relative;
+    width: 980px;
+    height: 524px;
 }
 
 .quote {
@@ -395,4 +404,71 @@ header .login {
     background-repeat: no-repeat;
     background-position: 0px;
     margin: 0 auto;
+}
+
+.feedback .controls {
+    background-color: #F9C06A;
+    position: absolute;
+    bottom: 0px;
+    left: 500px;
+}
+
+.feedback .controls input {
+   appearance: none;
+   width: 35px;
+   height: 35px;
+   border-radius: 50%;
+   border: 6px solid var(--color-coffee);
+   margin-right: 11px; 
+   position: relative;
+   cursor: pointer;
+}
+
+.feedback .controls input:last-child {
+    margin-right: 0;
+}
+
+.feedback .controls input::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2.1px;
+    width: 19px;
+    height: 19px;
+    background-color: var(--color-coffee);
+    border-radius: 50%;
+    display: none;
+}
+
+.feedback .controls input:checked::after {
+    display: block;
+}
+
+.controls:has(#control1:checked) + .slider .slides {
+    transform: translateX(0px);
+}
+
+.controls:has(#control2:checked) + .slider .slides {
+    transform: translateX(-980px);
+}
+
+.controls:has(#control3:checked) + .slider .slides {
+    transform: translateX(-1960px);
+}
+
+.arrows-box {
+    display: block;
+}
+
+.controls:has(#control1:checked) ~ .arrows .arrows-slide1, 
+.controls:has(#control2:checked) ~ .arrows .arrows-slide2,
+.controls:has(#control3:checked) ~ .arrows .arrows-slide3 {
+    display: block;
+}
+
+.arrows-box label {
+    background-color: var(--btn-background);
+    width: 82px;
+    border-radius: 16px;
+    display: inline-block;
 }
